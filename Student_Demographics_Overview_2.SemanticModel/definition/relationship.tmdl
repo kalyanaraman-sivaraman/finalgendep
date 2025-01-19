@@ -1,0 +1,1 @@
+"relationship 94665839-6924-4b0f-b4ae-0f56735d8e47\n    fromColumn: tutor.'Course id'\n    toColumn: course.'Course id (course)'\nrelationship 2bbdf849-e2f3-4650-80f6-38d784eece47\n    toCardinality: many\n    fromColumn: course.'Course id (course)'\n    toColumn: student.'Course ID'\n"
