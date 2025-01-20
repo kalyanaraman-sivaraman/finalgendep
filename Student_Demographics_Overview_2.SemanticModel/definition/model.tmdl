@@ -1,20 +1,18 @@
+model Model
+    culture: en-US
+    defaultPowerBIDataSourceVersion: powerBI_V3
+    sourceQueryCulture: en-IN
+    dataAccessOptions
+        legacyRedirects
+        returnErrorValuesAsNull
 
-    model Model
-        culture: en-US
-        defaultPowerBIDataSourceVersion: powerBI_V3
-        sourceQueryCulture: en-IN
-        dataAccessOptions
-            legacyRedirects
-            returnErrorValuesAsNull
+annotation __PBI_TimeIntelligenceEnabled = 0
 
-    annotation __PBI_TimeIntelligenceEnabled = 0
-
-    annotation PBIDesktopVersion = 2.130.754.0 (24.06)annotation PBI_QueryOrder=["course1", "tutor", "course", "student"]
-    annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
-    
+annotation PBIDesktopVersion = 2.130.754.0 (24.06)annotation PBI_QueryOrder=["student", "course1", "tutor", "course"]
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
+ref table student
 ref table course1
 ref table tutor
 ref table course
-ref table student
-            ref cultureInfo en-US
+ref cultureInfo en-US
             

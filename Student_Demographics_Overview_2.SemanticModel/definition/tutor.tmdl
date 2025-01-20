@@ -1,37 +1,37 @@
 table tutor
-	lineageTag: bbc3549c-bb8c-49bb-9c11-61f078b62af3
+	lineageTag: f6828f38-a0e1-4540-a87d-5e9e55b92b54
 
-	column '1Course id'
+	column 'Course id'
 		dataType: string
-		lineageTag: 9c1263e1-a5b2-4d6f-bac0-cd76eecafaaf
+		lineageTag: 96bb4f5d-2ae8-4ee5-85e6-35edee3cdbae
 		summarizeBy: none
 		sourceColumn: Course id
 		annotation SummarizationSetBy = Automatic
 
 	column tutor_id
 		dataType: string
-		lineageTag: e4f274f6-44be-4f85-ab48-d87f030af2c4
+		lineageTag: c439d420-9769-4634-92c1-0bb017ee284d
 		summarizeBy: none
 		sourceColumn: tutor_id
 		annotation SummarizationSetBy = Automatic
 
 	column name
 		dataType: string
-		lineageTag: f7e95261-2174-4568-b349-f77d9795d8eb
+		lineageTag: 8fb6799a-dd7c-4c02-88d1-08a26f32b94c
 		summarizeBy: none
 		sourceColumn: name
 		annotation SummarizationSetBy = Automatic
 
 	column gender
 		dataType: string
-		lineageTag: 51a13b2f-d2e5-4da3-8aea-fbd96cf15f9f
+		lineageTag: d64bfffb-2003-4c48-8001-4d716f398259
 		summarizeBy: none
 		sourceColumn: gender
 		annotation SummarizationSetBy = Automatic
 
 	column date_of_birth
 		dataType: datetime
-		lineageTag: b5ba3dd3-e376-4323-91ca-5a16d56337bc
+		lineageTag: 1d968fd1-d1d1-4731-86ba-55b7d3830d32
 		summarizeBy: none
 		sourceColumn: date_of_birth
 		annotation SummarizationSetBy = Automatic
@@ -39,26 +39,26 @@ table tutor
 
 	column email
 		dataType: string
-		lineageTag: ac0a20d0-35f7-4747-9fea-b6c7c877379f
+		lineageTag: dd030b86-3396-420e-b884-22cc343a8a0c
 		summarizeBy: none
 		sourceColumn: email
 		annotation SummarizationSetBy = Automatic
 
 	column department
 		dataType: string
-		lineageTag: 8e3bc261-de00-43b0-9e76-6d88e4ff296e
+		lineageTag: fe961605-d3c7-4add-a01b-b6f9949e7d3d
 		summarizeBy: none
 		sourceColumn: department
 		annotation SummarizationSetBy = Automatic
 
 	column specialization
 		dataType: string
-		lineageTag: 20768330-cfb4-4c2b-808a-c7a3a07f0912
+		lineageTag: 7838bbc3-7283-4c86-9062-918898bda6f7
 		summarizeBy: none
 		sourceColumn: specialization
 		annotation SummarizationSetBy = Automatic
 
-   partition tutor = m
+    partition tutor = m
         mode: import
         source =
                 let
@@ -69,5 +69,4 @@ table tutor
                 in
                     tutor_Table
 
-annotation PBI_ResultType = Table
-                        
+    annotation PBI_ResultType = Table

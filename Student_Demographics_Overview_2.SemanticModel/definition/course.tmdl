@@ -1,42 +1,42 @@
 table course
-	lineageTag: df7f8338-8920-4e1f-94a5-b4f1d03301a7
+	lineageTag: 390a4d56-30a4-4ebd-9c61-3a1fe0f2fbe8
 
-	column '1Course id (course)'
+	column 'Course id (course)'
 		dataType: string
-		lineageTag: 77248219-42c6-4708-af36-6f1bd01bc65f
+		lineageTag: 0d174890-148a-42e5-97bb-cff9dc36b7ff
 		summarizeBy: none
 		sourceColumn: Course id (course)
 		annotation SummarizationSetBy = Automatic
 
 	column code
 		dataType: string
-		lineageTag: 521d3123-1e59-4a2e-bde5-022d975c6e11
+		lineageTag: d22c2b48-cf66-4d23-852f-8a008ed409be
 		summarizeBy: none
 		sourceColumn: code
 		annotation SummarizationSetBy = Automatic
 
 	column credits
 		dataType: int64
-		lineageTag: 15b03d03-4cf5-449c-857e-96fbfc88db1f
+		lineageTag: 95944c49-fc02-4b61-ae32-7d98be0b1314
 		summarizeBy: none
 		sourceColumn: credits
 		annotation SummarizationSetBy = Automatic
 
 	column level
 		dataType: string
-		lineageTag: 941e2306-a61d-421b-a942-8375ba031587
+		lineageTag: 09af4bdc-723e-4e31-a53c-f68fec7ad5f6
 		summarizeBy: none
 		sourceColumn: level
 		annotation SummarizationSetBy = Automatic
 
 	column Occupancy
 		dataType: int64
-		lineageTag: 8eafc7cd-2eea-4d6e-b23d-862c39dd6cd2
+		lineageTag: ba282340-71e3-4655-9817-fa5e359048c5
 		summarizeBy: none
 		sourceColumn: Occupancy
 		annotation SummarizationSetBy = Automatic
 
-   partition course = m
+    partition course = m
         mode: import
         source =
                 let
@@ -47,5 +47,4 @@ table course
                 in
                     course_Table
 
-annotation PBI_ResultType = Table
-                        
+    annotation PBI_ResultType = Table

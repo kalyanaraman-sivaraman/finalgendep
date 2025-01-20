@@ -1,69 +1,56 @@
+table Measure
+    lineageTag: ddd8187a-b438-4626-adef-6a5687ae13cb
 
-    table 'Measure Table'
-	     lineageTag: 4a539c36-b0ff-43f1-b3f4-5325783bc9b1  
-    
-measure 'Attendance Percentage - Split 1' =
+    measure 'Attendance Percentage - Split 1' =
 
+            Var A = VALUE(LEFT([Attendance Percentage], LEN([Attendance Percentage]) - 1))
+            return INT(A)
+        lineageTag: 43679896-8ceb-42cf-9531-10d47d6606ec
 
-Var A = INT( VALUE( SUBSTITUTE( [Attendance Percentage], "%", "" ) ) )
+    measure 'Student count' =
 
-return A+0 
+            Var A = DISTINCTCOUNT([Student ID])
+            return A+0 
+        lineageTag: e4e24344-1097-481c-ae40-24e78e5a7d26
 
- lineageTag: 81cfacd4-6368-425e-a302-002d40e20e24
-measure 'Student count' =
+    measure 'Tutors count' =
 
-    
-    Var A = DISTINCTCOUNT([Student ID])
+            Var A = DISTINCTCOUNT([tutor_id])
+            return A+0 
+        lineageTag: 4e6982c6-f76f-4f7f-be68-5bec2e6bdf13
 
-    return A+0 
+    measure 'Course offered' =
 
- lineageTag: 5c00cc6d-15bc-464b-b728-daf1aa50deb4
-measure 'Tutors count' =
+            Var A = DISTINCTCOUNT([Course id (course)])
+            return A+0 
+        lineageTag: c3d36706-d8fc-4933-8bef-27dcc5feb008
 
+    measure 'Avg Attendance %' =
 
-Var A = DISTINCTCOUNT([tutor_id])
+            Var A = AVERAGE([Attendance Percentage - Split 1])
+            return A+0 
+        lineageTag: 898f7e3c-be6b-41cd-a580-662dafd756fc
 
-return A+0 
+    measure 'Avg credits' =
 
- lineageTag: f55f6f20-99b6-492d-9b70-a834773bbea6
-measure 'Course offered' =
-
-
-Var A = DISTINCTCOUNT([Course id (course)])
-
-return A+0 
-
- lineageTag: e94d7a9e-c730-4f25-a5f1-60bae54353ad
-measure 'Avg Attendance %' =
-
-
-Var A = AVERAGE([Attendance Percentage - Split 1])
-
-return A+0 
-
- lineageTag: 5210ed27-ab94-4713-99b7-9b2ae2f2e32d
-measure 'Avg credits' =
-
-
-
-Var A = AVERAGE([credits])
-
-return A+0 
-
- lineageTag: 7cae0edc-02e9-4e62-8d17-a0e6a3c31b1f
+            Var A = AVERAGE([credits])
+            return A+0 
+        lineageTag: 19e48a55-6571-40b5-8f00-f4ac4f434f17
     column Column
-		dataType: double
-		formatString: #,0.00%;-#,0.00%;#,0.00%
-		lineageTag: b06e547d-ae89-48ef-9101-a36ed60310f6
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Column]
+        dataType: double
+        formatString: #,0.00%;-#,0.00%;#,0.00%
+        lineageTag: b06e547d-ae89-48ef-9101-a36ed60310f6
+        summarizeBy: none
+        isNameInferred
+        sourceColumn: [Column]
 
-		annotation SummarizationSetBy = User
+        annotation SummarizationSetBy = User
 
-	partition 'Measure Table' = calculated
-		mode: import
-		source = Row("Column", BLANK())
+    partition Measure = calculated
+        mode: import
+        source = Row("Column", BLANK())
 
-	annotation PBI_Id = 35e43472b79c47efb9bf240e6d624b06
+    annotation PBI_Id = 35e43472b79c47efb9bf240e6d624b06
+    
+    annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
     

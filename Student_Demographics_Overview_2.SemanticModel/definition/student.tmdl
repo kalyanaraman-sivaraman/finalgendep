@@ -1,56 +1,56 @@
 table student
-	lineageTag: 9996f698-37b6-4d7d-aa46-860b73ac1fe3
+	lineageTag: 6dcfe6a2-db32-49bb-bc26-a205c60d5479
 
-	column '1Student ID'
+	column 'Student ID'
 		dataType: string
-		lineageTag: 561493d8-efa4-4a23-b410-681e54a71071
+		lineageTag: 5dbd8873-a98a-40cb-b064-d53c19d01135
 		summarizeBy: none
 		sourceColumn: Student ID
 		annotation SummarizationSetBy = Automatic
 
-	column '1Course ID'
+	column 'Course ID'
 		dataType: string
-		lineageTag: 6dff0f84-4d9e-4388-9a90-58b170bd0f50
+		lineageTag: 6fb69e17-21f4-4f37-b41f-ad4bd621414c
 		summarizeBy: none
 		sourceColumn: Course ID
 		annotation SummarizationSetBy = Automatic
 
-	column '1code (student)'
+	column 'code (student)'
 		dataType: string
-		lineageTag: 320a5c94-7291-4e8b-b520-1be737231ef6
+		lineageTag: 7e64d488-0387-4716-9aaf-834c4136de87
 		summarizeBy: none
 		sourceColumn: code (student)
 		annotation SummarizationSetBy = Automatic
 
-	column '1Student Name'
+	column 'Student Name'
 		dataType: string
-		lineageTag: 81ed1f02-6a16-49f9-abb1-f73676b5c051
+		lineageTag: a6f85bf6-51a6-4a6f-9249-c2383a825a09
 		summarizeBy: none
 		sourceColumn: Student Name
 		annotation SummarizationSetBy = Automatic
 
-	column '1Attendance Percentage'
+	column 'Attendance Percentage'
 		dataType: string
-		lineageTag: d2d74501-3847-4e8c-862a-955923c22445
+		lineageTag: cbec267d-1899-4092-98fa-770fdc77f783
 		summarizeBy: none
 		sourceColumn: Attendance Percentage
 		annotation SummarizationSetBy = Automatic
 
 	column Gender
 		dataType: string
-		lineageTag: 9df55cfe-d745-429c-8f99-52ef72049520
+		lineageTag: c4525fbb-ce80-48b1-b50b-30799fbc19ee
 		summarizeBy: none
 		sourceColumn: Gender
 		annotation SummarizationSetBy = Automatic
 
 	column CGPA
 		dataType: double
-		lineageTag: 6ea26f8e-63ec-4758-a82b-f33a74360dae
+		lineageTag: 11c4bb38-1065-43e6-b7bf-2a487d8d228b
 		summarizeBy: none
 		sourceColumn: CGPA
 		annotation SummarizationSetBy = Automatic
 
-   partition student = m
+    partition student = m
         mode: import
         source =
                 let
@@ -61,5 +61,4 @@ table student
                 in
                     student_Table
 
-annotation PBI_ResultType = Table
-                        
+    annotation PBI_ResultType = Table
