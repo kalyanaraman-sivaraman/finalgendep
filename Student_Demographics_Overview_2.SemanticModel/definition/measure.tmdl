@@ -1,1 +1,69 @@
-"\n    table 'Measure Table'\n\t     lineageTag: f2d37e60-006b-475a-b49d-ebca81320cc8  \n    \nmeasure 'Attendance Percentage - Split 1' =\n\n    \n    Var A = VALUE(LEFT([Attendance Percentage], LEN([Attendance Percentage]) - 1))\n\n    return INT(A) \n\n lineageTag: 6cd113fa-bccf-4827-b4b2-a511f0eaeb36\nmeasure 'Student count' =\n\n    \n    Var A = DISTINCTCOUNT([Student ID])\n\n    return A+0 \n\n lineageTag: 285a53cb-a848-4e71-9f00-603249703d92\nmeasure 'Tutors count' =\n\n    \n    VAR A = DISTINCTCOUNT([tutor_id])\n\n    RETURN A+0\n\n lineageTag: ffce8ad4-2349-4667-9178-0adf9104e5ed\nmeasure 'Course offered' =\n\n    \n    Var A = DISTINCTCOUNT([Course id (course)])\n\n    return A+0 \n\n lineageTag: 6be6a7f9-af91-44d1-877c-24c5481f2222\nmeasure 'Avg Attendance %' =\n\n\n\nVar A = AVERAGE([Attendance Percentage - Split 1])\n\nreturn A+0 \n\n lineageTag: e05b18ec-b9f9-4ae2-9945-df5c5cfa010d\nmeasure 'Avg credits' =\n\n\n\nVar A = AVERAGE([credits])\n\nreturn A+0 \n\n lineageTag: 0130c6ee-fa38-4a28-b00f-50468a7c0893\n    column Column\n\t\tdataType: double\n\t\tformatString: #,0.00%;-#,0.00%;#,0.00%\n\t\tlineageTag: b06e547d-ae89-48ef-9101-a36ed60310f6\n\t\tsummarizeBy: none\n\t\tisNameInferred\n\t\tsourceColumn: [Column]\n\n\t\tannotation SummarizationSetBy = User\n\n\tpartition 'Measure Table' = calculated\n\t\tmode: import\n\t\tsource = Row(\"Column\", BLANK())\n\n\tannotation PBI_Id = 35e43472b79c47efb9bf240e6d624b06\n    "
+
+    table 'Measure Table'
+	     lineageTag: 4a539c36-b0ff-43f1-b3f4-5325783bc9b1  
+    
+measure 'Attendance Percentage - Split 1' =
+
+
+Var A = INT( VALUE( SUBSTITUTE( [Attendance Percentage], "%", "" ) ) )
+
+return A+0 
+
+ lineageTag: 81cfacd4-6368-425e-a302-002d40e20e24
+measure 'Student count' =
+
+    
+    Var A = DISTINCTCOUNT([Student ID])
+
+    return A+0 
+
+ lineageTag: 5c00cc6d-15bc-464b-b728-daf1aa50deb4
+measure 'Tutors count' =
+
+
+Var A = DISTINCTCOUNT([tutor_id])
+
+return A+0 
+
+ lineageTag: f55f6f20-99b6-492d-9b70-a834773bbea6
+measure 'Course offered' =
+
+
+Var A = DISTINCTCOUNT([Course id (course)])
+
+return A+0 
+
+ lineageTag: e94d7a9e-c730-4f25-a5f1-60bae54353ad
+measure 'Avg Attendance %' =
+
+
+Var A = AVERAGE([Attendance Percentage - Split 1])
+
+return A+0 
+
+ lineageTag: 5210ed27-ab94-4713-99b7-9b2ae2f2e32d
+measure 'Avg credits' =
+
+
+
+Var A = AVERAGE([credits])
+
+return A+0 
+
+ lineageTag: 7cae0edc-02e9-4e62-8d17-a0e6a3c31b1f
+    column Column
+		dataType: double
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: b06e547d-ae89-48ef-9101-a36ed60310f6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Measure Table' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 35e43472b79c47efb9bf240e6d624b06
+    

@@ -1,1 +1,73 @@
-"table tutor\n\tlineageTag: 6e3ca50d-3c81-4436-bcbe-a7f17a9af2be\n\n\tcolumn Course id\n\t\tdataType: string\n\t\tlineageTag: 4efb47ae-1567-4b04-89fa-32b8d36212ff\n\t\tsummarizeBy: none\n\t\tsourceColumn: Course id\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn tutor_id\n\t\tdataType: string\n\t\tlineageTag: 7f53ee5e-e2f1-43b5-948a-e25119c40f1f\n\t\tsummarizeBy: none\n\t\tsourceColumn: tutor_id\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn name\n\t\tdataType: string\n\t\tlineageTag: ebeb933e-c185-491d-ab25-cee9d014d8cd\n\t\tsummarizeBy: none\n\t\tsourceColumn: name\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn gender\n\t\tdataType: string\n\t\tlineageTag: 64dc4b06-db4f-448c-972c-a84c221a1919\n\t\tsummarizeBy: none\n\t\tsourceColumn: gender\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn date_of_birth\n\t\tdataType: datetime\n\t\tformatString: yyyy-MM-dd\n\t\tlineageTag: b04f4942-1074-47f3-a3d9-be68e9d0e4f0\n\t\tsummarizeBy: none\n\t\tsourceColumn: date_of_birth\n\t\tannotation SummarizationSetBy = Automatic\n\t\tannotation UnderlyingDateTimeDataType = Time\n\n\tcolumn email\n\t\tdataType: string\n\t\tlineageTag: b982dc76-6265-4521-bd24-7eefc4a636cd\n\t\tsummarizeBy: none\n\t\tsourceColumn: email\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn department\n\t\tdataType: string\n\t\tlineageTag: 5a2736aa-7e58-4624-bd75-5139e6e20bc3\n\t\tsummarizeBy: none\n\t\tsourceColumn: department\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn specialization\n\t\tdataType: string\n\t\tlineageTag: 0bffe3f2-0dd8-4c54-8258-75ba24932762\n\t\tsummarizeBy: none\n\t\tsourceColumn: specialization\n\t\tannotation SummarizationSetBy = Automatic\n\n\npartition tutor = m\n    annotation PBI_ResultType = Table\n\n\n                        partition tutor = m\n                                mode: import\n                                source =\n                                        let\n                                            Source = Databricks.Catalogs(\"adb-201068313543333.13.azuredatabricks.net\", \"/sql/1.0/warehouses/b0a66af24d7401a1\", [Catalog=\"reportinghub\", Database=null, EnableAutomaticProxyDiscovery=null]),\n                                            reportinghub_Database = Source{[Name=\"reportinghub\",Kind=\"Database\"]}[Data],\n                                            default_Schema = reportinghub_Database{[Name=\"default\",Kind=\"Schema\"]}[Data],\n                                            tutor_Table = default_Schema{[Name=\"tutor\",Kind=\"Table\"]}[Data]\n                                        in\n                                            tutor_Table\n\n                        annotation PBI_ResultType = Table\n                        \n"
+table tutor
+	lineageTag: bbc3549c-bb8c-49bb-9c11-61f078b62af3
+
+	column '1Course id'
+		dataType: string
+		lineageTag: 9c1263e1-a5b2-4d6f-bac0-cd76eecafaaf
+		summarizeBy: none
+		sourceColumn: Course id
+		annotation SummarizationSetBy = Automatic
+
+	column tutor_id
+		dataType: string
+		lineageTag: e4f274f6-44be-4f85-ab48-d87f030af2c4
+		summarizeBy: none
+		sourceColumn: tutor_id
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: f7e95261-2174-4568-b349-f77d9795d8eb
+		summarizeBy: none
+		sourceColumn: name
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 51a13b2f-d2e5-4da3-8aea-fbd96cf15f9f
+		summarizeBy: none
+		sourceColumn: gender
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_birth
+		dataType: datetime
+		lineageTag: b5ba3dd3-e376-4323-91ca-5a16d56337bc
+		summarizeBy: none
+		sourceColumn: date_of_birth
+		annotation SummarizationSetBy = Automatic
+		annotation UnderlyingDateTimeDataType = Time
+
+	column email
+		dataType: string
+		lineageTag: ac0a20d0-35f7-4747-9fea-b6c7c877379f
+		summarizeBy: none
+		sourceColumn: email
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 8e3bc261-de00-43b0-9e76-6d88e4ff296e
+		summarizeBy: none
+		sourceColumn: department
+		annotation SummarizationSetBy = Automatic
+
+	column specialization
+		dataType: string
+		lineageTag: 20768330-cfb4-4c2b-808a-c7a3a07f0912
+		summarizeBy: none
+		sourceColumn: specialization
+		annotation SummarizationSetBy = Automatic
+
+   partition tutor = m
+        mode: import
+        source =
+                let
+                    Source = Databricks.Catalogs("adb-201068313543333.13.azuredatabricks.net", "/sql/1.0/warehouses/b0a66af24d7401a1", [Catalog="reportinghub", Database=null, EnableAutomaticProxyDiscovery=null]),
+                    reportinghub_Database = Source{[Name="reportinghub",Kind="Database"]}[Data],
+                    default_Schema = reportinghub_Database{[Name="default",Kind="Schema"]}[Data],
+                    tutor_Table = default_Schema{[Name="tutor",Kind="Table"]}[Data]
+                in
+                    tutor_Table
+
+annotation PBI_ResultType = Table
+                        

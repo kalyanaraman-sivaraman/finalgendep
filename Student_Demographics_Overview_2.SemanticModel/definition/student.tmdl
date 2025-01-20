@@ -1,1 +1,65 @@
-"table student\n\tlineageTag: 3decb319-d39f-4631-845b-04b82c406a13\n\n\tcolumn Student ID\n\t\tdataType: string\n\t\tlineageTag: 72acbb97-a4ec-4619-b0ac-ea138ec178d8\n\t\tsummarizeBy: none\n\t\tsourceColumn: Student ID\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn Course ID\n\t\tdataType: string\n\t\tlineageTag: 3aaf6d94-44cd-4ee0-a8e1-eea40146b96a\n\t\tsummarizeBy: none\n\t\tsourceColumn: Course ID\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn code (student)\n\t\tdataType: string\n\t\tlineageTag: ac6c1718-c1f9-4c32-a29f-d7296bb9b991\n\t\tsummarizeBy: none\n\t\tsourceColumn: code (student)\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn Student Name\n\t\tdataType: string\n\t\tlineageTag: e3746cb2-29f4-4fae-acbb-88cf5981ec7d\n\t\tsummarizeBy: none\n\t\tsourceColumn: Student Name\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn Attendance Percentage\n\t\tdataType: string\n\t\tlineageTag: 3a379331-1aa5-4815-b64b-508c50243836\n\t\tsummarizeBy: none\n\t\tsourceColumn: Attendance Percentage\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn Gender\n\t\tdataType: string\n\t\tlineageTag: 8a0d612d-aecc-4930-95aa-873dc71b647a\n\t\tsummarizeBy: none\n\t\tsourceColumn: Gender\n\t\tannotation SummarizationSetBy = Automatic\n\n\tcolumn CGPA\n\t\tdataType: double\n\t\tlineageTag: af304416-5471-431a-813b-fa386fb53455\n\t\tsummarizeBy: none\n\t\tsourceColumn: CGPA\n\t\tannotation SummarizationSetBy = Automatic\n\n\npartition student = m\n    annotation PBI_ResultType = Table\n\n\n                        partition student = m\n                                mode: import\n                                source =\n                                        let\n                                            Source = Databricks.Catalogs(\"adb-201068313543333.13.azuredatabricks.net\", \"/sql/1.0/warehouses/b0a66af24d7401a1\", [Catalog=\"reportinghub\", Database=null, EnableAutomaticProxyDiscovery=null]),\n                                            reportinghub_Database = Source{[Name=\"reportinghub\",Kind=\"Database\"]}[Data],\n                                            default_Schema = reportinghub_Database{[Name=\"default\",Kind=\"Schema\"]}[Data],\n                                            student_Table = default_Schema{[Name=\"student\",Kind=\"Table\"]}[Data]\n                                        in\n                                            student_Table\n\n                        annotation PBI_ResultType = Table\n                        \n"
+table student
+	lineageTag: 9996f698-37b6-4d7d-aa46-860b73ac1fe3
+
+	column '1Student ID'
+		dataType: string
+		lineageTag: 561493d8-efa4-4a23-b410-681e54a71071
+		summarizeBy: none
+		sourceColumn: Student ID
+		annotation SummarizationSetBy = Automatic
+
+	column '1Course ID'
+		dataType: string
+		lineageTag: 6dff0f84-4d9e-4388-9a90-58b170bd0f50
+		summarizeBy: none
+		sourceColumn: Course ID
+		annotation SummarizationSetBy = Automatic
+
+	column '1code (student)'
+		dataType: string
+		lineageTag: 320a5c94-7291-4e8b-b520-1be737231ef6
+		summarizeBy: none
+		sourceColumn: code (student)
+		annotation SummarizationSetBy = Automatic
+
+	column '1Student Name'
+		dataType: string
+		lineageTag: 81ed1f02-6a16-49f9-abb1-f73676b5c051
+		summarizeBy: none
+		sourceColumn: Student Name
+		annotation SummarizationSetBy = Automatic
+
+	column '1Attendance Percentage'
+		dataType: string
+		lineageTag: d2d74501-3847-4e8c-862a-955923c22445
+		summarizeBy: none
+		sourceColumn: Attendance Percentage
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 9df55cfe-d745-429c-8f99-52ef72049520
+		summarizeBy: none
+		sourceColumn: Gender
+		annotation SummarizationSetBy = Automatic
+
+	column CGPA
+		dataType: double
+		lineageTag: 6ea26f8e-63ec-4758-a82b-f33a74360dae
+		summarizeBy: none
+		sourceColumn: CGPA
+		annotation SummarizationSetBy = Automatic
+
+   partition student = m
+        mode: import
+        source =
+                let
+                    Source = Databricks.Catalogs("adb-201068313543333.13.azuredatabricks.net", "/sql/1.0/warehouses/b0a66af24d7401a1", [Catalog="reportinghub", Database=null, EnableAutomaticProxyDiscovery=null]),
+                    reportinghub_Database = Source{[Name="reportinghub",Kind="Database"]}[Data],
+                    default_Schema = reportinghub_Database{[Name="default",Kind="Schema"]}[Data],
+                    student_Table = default_Schema{[Name="student",Kind="Table"]}[Data]
+                in
+                    student_Table
+
+annotation PBI_ResultType = Table
+                        
