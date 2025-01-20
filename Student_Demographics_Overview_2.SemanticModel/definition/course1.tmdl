@@ -1,37 +1,37 @@
 table course1
-	lineageTag: 05c70a83-a502-4498-acda-6b04d18dca3e
+	lineageTag: a7f4bd8b-d293-463e-8791-6361937ba156
 
 	column 'Course id (course1)'
 		dataType: string
-		lineageTag: 609eab40-814a-4b67-895a-b65576bbddf4
+		lineageTag: 7b16118c-9488-4fcd-af12-eb38469e602f
 		summarizeBy: none
 		sourceColumn: Course id (course1)
 		annotation SummarizationSetBy = Automatic
 
 	column 'code (course1)'
 		dataType: string
-		lineageTag: 36d45555-8adb-4d8d-a22e-50972c3c199e
+		lineageTag: f0b6096d-f8a4-444c-acf3-1675d5a49733
 		summarizeBy: none
 		sourceColumn: code (course1)
 		annotation SummarizationSetBy = Automatic
 
 	column 'credits (course1)'
 		dataType: int64
-		lineageTag: 77a8dc92-497f-46ba-b9b0-033f91c1b936
+		lineageTag: eba28ba6-6714-4147-b7e6-50ccbf823d82
 		summarizeBy: none
 		sourceColumn: credits (course1)
 		annotation SummarizationSetBy = Automatic
 
 	column 'level (course1)'
 		dataType: string
-		lineageTag: 00da2647-f063-430f-86e2-85a4c407f256
+		lineageTag: 8c94e14a-21a2-4828-8c58-4e25be7c7194
 		summarizeBy: none
 		sourceColumn: level (course1)
 		annotation SummarizationSetBy = Automatic
 
 	column 'Occupancy (course1)'
 		dataType: int64
-		lineageTag: 364eccda-e080-4de8-b422-2377ee784f8c
+		lineageTag: 705e0757-8c81-48aa-9742-3e8c8a3988ce
 		summarizeBy: none
 		sourceColumn: Occupancy (course1)
 		annotation SummarizationSetBy = Automatic

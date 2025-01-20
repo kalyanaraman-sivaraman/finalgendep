@@ -1,7 +1,7 @@
-relationship f1d1b8f6-18f9-4a09-ab76-d99cda8c3e16
+relationship 04e224c5-4bf7-44fd-8c4d-6be2a81813f8
     fromColumn: tutor.'Course id'
     toColumn: course.'Course id (course)'
-relationship 70e07662-3ce9-4728-a0f8-68f4c9de3ea7
+relationship 6a5b9c98-7683-4ad2-8b13-a5a890df6059
     toCardinality: many
     fromColumn: course.'Course id (course)'
     toColumn: student.'Course ID'
